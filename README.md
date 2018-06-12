@@ -1,10 +1,14 @@
-#Example workflow for reference-guided variant calling 
+# Example workflow for reference-guided variant calling 
 
-##This example script takes several fastq files that represent R1's (Read 1) for 2 dogs from the DoGSD project (http://dogsd.big.ac.cn/dogsd/pages/download/fastq.js), aligns them to the canFam3 chr1 reference, and calls SNPs.
-##Dog subset files were created as follows (from full gzip downloads):
-`for file in $(ls ~/Downloads/dog_00* | sed 's/^.*\///g' | sed 's/_1.fq.gz//g'); do zcat ~/Downloads/${file}_1.fq.gz | head -n800000 > ./${file}.R1.fastq; done
-for file in $(ls dog* | sed 's/.R1.fastq//g'); do split -a1 -d -l200000 --additional-suffix=.fastq ${file}.R1.fastq data/${file}_R1_; done
-rm *R1.fastq`
+## This example script takes several fastq files that represent R1's (Read 1) for 2 dogs from the DoGSD project (http://dogsd.big.ac.cn/dogsd/pages/download/fastq.js), aligns them to the canFam3 chr1 reference, and calls SNPs.
+
+## Dog subset files were created as follows (from full gzip downloads):
+
+`for file in $(ls ~/Downloads/dog_00* | sed 's/^.*\///g' | sed 's/_1.fq.gz//g'); do zcat ~/Downloads/${file}_1.fq.gz | head -n800000 > ./${file}.R1.fastq; done`
+
+`for file in $(ls dog* | sed 's/.R1.fastq//g'); do split -a1 -d -l200000 --additional-suffix=.fastq ${file}.R1.fastq data/${file}_R1_; done`
+
+`rm *R1.fastq`
 
 
 ##See below for a list of programs that need installing (included here in the programs directory for convenience, but how to install for Ubuntu included below as well)
