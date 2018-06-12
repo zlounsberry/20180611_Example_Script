@@ -33,3 +33,7 @@ make`
 
 
 ### When you are finished, your resulting file should match `spoiler_output/20180611_Dog_SNP_Calling.vcf`
+
+
+
+## To run this with your own fastq files/reference genome, swap out the appropriate options (in General Usage above) and run the script the same way.
