@@ -13,18 +13,21 @@ This example script takes several fastq files that represent R1's (Read 1) for 2
 
 Dog subset files were created as follows (from full gzip downloads):
 `for file in $(ls ~/Downloads/dog_00* | sed 's/^.*\///g' | sed 's/_1.fq.gz//g'); do zcat ~/Downloads/${file}_1.fq.gz | head -n800000 > ./${file}.R1.fastq; done`
+
 `for file in $(ls dog* | sed 's/.R1.fastq//g'); do split -a1 -d -l200000 --additional-suffix=.fastq ${file}.R1.fastq data/${file}_R1_; done`
+
 `rm *R1.fastq`
 
 The following software is required to run this script 
 NOTE: May require sudo privileges to install. Contact administrator for help if needed.
-# bwa (https://sourceforge.net/projects/bio-bwa/files/)
+## bwa (https://sourceforge.net/projects/bio-bwa/files/)
 `apt-get install bwa`
-# samtools (https://sourceforge.net/projects/samtools/)
+## samtools (https://sourceforge.net/projects/samtools/)
 `apt-get install samtools`
-# freebayes (https://github.com/ekg/freebayes)
+## freebayes (https://github.com/ekg/freebayes)
 `git clone --recursive https://github.com/ekg/freebayes
 cd freebayes
 make`
 
-Your resulting file should match `spoiler_output/20180611_Dog_SNP_Calling.vcf`
+
+#### When you are finished, your resulting file should match `spoiler_output/20180611_Dog_SNP_Calling.vcf`
