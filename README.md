@@ -7,9 +7,9 @@ Once everything is installed, execute the line listed as "Example" below
 ## General usage: 
 `./ExampleWorkflow.sh [paired=pe/single=se] [reference.fasta] [path to input file(s)] [path to output file(s)] [date you called SNPs as YEARMMDD] [name of project]`
 ## Example: 
-`./ExampleWorkflow.sh se ./reference/canFam3_chr1.fa ./data ./alignments 20180611 Dog_SNP_Calling`
+`./ExampleWorkflow.sh se ./reference/canFam3_chr26.fa ./data ./alignments 20180611 Dog_SNP_Calling`
 
-This example script takes several fastq files that represent R1's (Read 1) for 2 dogs from the DoGSD project (http://dogsd.big.ac.cn/dogsd/pages/download/fastq.js), aligns them to the canFam3 chr1 reference, and calls SNPs.
+This example script takes several fastq files that represent R1's (Read 1) for 2 dogs from the DoGSD project (http://dogsd.big.ac.cn/dogsd/pages/download/fastq.js), aligns them to the canFam3 chr26 reference, and calls SNPs.
 
 Dog subset files were created as follows (from full gzip downloads):
 
