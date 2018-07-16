@@ -11,6 +11,8 @@ Alignment_Directory=$4
 Date_Of_SNP_Calling=$5
 Sample_ID=$6
 
+mkdir ${Alignment_Directory}
+
 if ls ${Reference}* | grep -q ${Reference}.bwt; then
 	echo "There is already a bwa reference for this, continuing"
 else
