@@ -21,7 +21,7 @@ else
 fi
 
 bwa mem -R "@RG\tID:${Sample_ID}\tSM:${Sample_ID}" ${Reference} ${Path_To_Input}/*R1* ${Path_To_Input}/*R2* > ${Alignment_Directory}/${Sample_ID}.sam
-samtools view -F 4 -q 10 -bS ${Alignment_Directory}/${Sample_ID}.sam | programs/samtools sort - ${Alignment_Directory}/${Sample_ID}
+samtools view -F 4 -q 10 -bS ${Alignment_Directory}/${Sample_ID}.sam | samtools sort - ${Alignment_Directory}/${Sample_ID}
 samtools index ${Alignment_Directory}/${Sample_ID}.bam
 rm ${Alignment_Directory}/${Sample_ID}.sam
 freebayes -f ${Reference} ${Alignment_Directory}/*bam > ${Date_Of_SNP_Calling}_${Sample_ID}.vcf
